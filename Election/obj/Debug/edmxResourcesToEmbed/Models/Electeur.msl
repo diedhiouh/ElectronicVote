@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ElectionDatabaseModel3StoreContainer" CdmEntityContainer="ElectionDatabaseEntities3">
+    <EntitySetMapping Name="Electeur">
+      <EntityTypeMapping TypeName="ElectionDatabaseModel3.Electeur">
+        <MappingFragment StoreEntitySet="Electeur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="cni" ColumnName="cni" />
+          <ScalarProperty Name="avoter" ColumnName="avoter" />
+          <ScalarProperty Name="candidat" ColumnName="candidat" />
+          <ScalarProperty Name="bureau" ColumnName="bureau" />
+          <ScalarProperty Name="compte" ColumnName="compte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
