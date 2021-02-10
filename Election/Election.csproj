@@ -344,6 +344,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\connexion.cshtml" />
     <Content Include="Views\Admin\Connexion.cshtml" />
+    <Content Include="Views\Shared\_admin.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

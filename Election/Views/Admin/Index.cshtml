@@ -1,4 +1,7 @@
-﻿
+﻿@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
 @{
     ViewBag.Title = "Index";
 }
@@ -6,33 +9,33 @@
 <h2>ESPACE ADMINISTRATION</h2>
 
 <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="sidebar-nav">
-                            <div class="navbar navbar-default" role="navigation">
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                    <span class="visible-xs navbar-brand">Sidebar menu</span>
-                                </div>
-                                <div class="navbar-collapse collapse sidebar-navbar-collapse">
-                                    <ul class="nav navbar-nav">
-                                        <li class="active"><a href="#">TABLEAU DE BORD</a></li>
-                                        <li>@Html.ActionLink("Bureau de vote", "Index", "BureauVotes")</li>
-                                        <li>@Html.ActionLink("Candidat", "Index", "Candidats")</li>
-                                        <li>@Html.ActionLink("Electeur", "Index", "Electeurs")</li>
-                                        <li>@Html.ActionLink("Compte", "Index", "Comptes")</li>
-                                    </ul>
-                                </div><!--/.nav-collapse -->
-                            </div>
-                        </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="sidebar-nav">
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span class="visible-xs navbar-brand">Sidebar menu</span>
                     </div>
-                    <div class="col-sm-3">
-                        Contenu
+                    <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">TABLEAU DE BORD</a></li>
+                            <li>@Html.ActionLink("Bureau de vote", "Index", "BureauVotes")</li>
+                            <li>@Html.ActionLink("Candidat", "Index", "Candidats")</li>
+                            <li>@Html.ActionLink("Electeur", "Index", "Electeurs")</li>
+                            <li>@Html.ActionLink("Compte", "Index", "Comptes")</li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
                 </div>
-</div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            Contenu
+        </div>
+    </div>
 </div>

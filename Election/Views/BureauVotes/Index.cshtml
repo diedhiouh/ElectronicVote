@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<Election.Models.BureauVote>
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
 
 @{
     ViewBag.Title = "Index";
@@ -36,7 +39,7 @@
             <p>
                 @Html.ActionLink("Create New", "Create")
             </p>
-            <table class="table">
+            <table class="table table-responsive">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.code)

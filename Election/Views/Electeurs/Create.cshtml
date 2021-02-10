@@ -1,4 +1,7 @@
 ﻿@model Election.Models.Electeur
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
 
 @{
     ViewBag.Title = "Create";
@@ -7,10 +10,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Electeur</h4>
         <hr />

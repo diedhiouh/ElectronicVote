@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<Election.Models.Electeur>
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
 
 @{
     ViewBag.Title = "Index";
@@ -36,9 +39,11 @@
 
 
             <p>
-                @Html.ActionLink("Create New", "Create")
+                <div class="btn btn-default">
+                    @Html.ActionLink("Nouveau electeur", "Create")
+                </div>
             </p>
-            <table class="table">
+            <table class="table table-striped">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.prenom)
