@@ -34,7 +34,9 @@ namespace Election.Controllers
 
         public ActionResult connexion()
         {
-            
+
+            ViewBag.voir = false;
+
             return View();
         }
     }

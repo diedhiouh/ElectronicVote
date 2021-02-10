@@ -19,5 +19,6 @@ namespace Election.Models
         public string nom { get; set; }
         public string parti { get; set; }
         public Nullable<System.DateTime> datenaiss { get; set; }
+        public byte[] photo { get; set; }
     }
 }

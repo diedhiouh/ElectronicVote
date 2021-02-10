@@ -9,8 +9,7 @@ namespace Election.Controllers
 {
     public class AdminController : Controller
     {
-        string message = "";
-        Boolean connect = false;
+       
         // GET: Admin
         public ActionResult Index()
         {
@@ -37,7 +36,6 @@ namespace Election.Controllers
                 {
                     if (c.login.Equals(compte.login) && (c.password.Equals(compte.password)))
                     {
-                        this.connect = true;
                         return RedirectToAction("Index");
                     }
                     else

@@ -13,10 +13,10 @@ namespace Election.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ElectionDatabaseEntities1 : DbContext
+    public partial class ElectionDatabaseEntities : DbContext
     {
-        public ElectionDatabaseEntities1()
-            : base("name=ElectionDatabaseEntities1")
+        public ElectionDatabaseEntities()
+            : base("name=ElectionDatabaseEntities")
         {
         }
     

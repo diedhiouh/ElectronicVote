@@ -7,8 +7,8 @@
     ViewBag.Title = "Index";
 }
 <link href="~/Content/Style.css" rel="stylesheet" />
-<h2>Candidat</h2>
 
+<h2>Index</h2>
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
@@ -36,14 +36,10 @@
             </div>
         </div>
         <div class="col-sm-8">
-
-
             <p>
-                <div class="btn btn-default">
-                    @Html.ActionLink("Nouveau candidat", "Create")
-                </div>
+                @Html.ActionLink("Create New", "Create")
             </p>
-            <table class="table table-hover">
+            <table class="table table-responsive">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.prenom)
@@ -56,6 +52,9 @@
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.datenaiss)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.photo)
                     </th>
                     <th></th>
                 </tr>
@@ -74,6 +73,9 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.datenaiss)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.photo)
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

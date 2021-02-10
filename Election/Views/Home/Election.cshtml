@@ -10,22 +10,31 @@
     <div class="row">
         <div class="col-md-5">
 
-            <form>
+            @{
+                if (ViewBag.voir == false)
+                {
+                    <form>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Numero carte d'identite national</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre votre numero d'identite">
+                            <small id="emailHelp" class="form-text text-muted">ce numero est numero unique</small>
+                        </div>
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Numero carte d'identite national</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre votre numero d'identite">
-                    <small id="emailHelp" class="form-text text-muted">ce numero est numero unique</small>
-                </div>
+                        <button type="submit" class="btn btn-primary">Valider</button>
+                    </form>
+                }
 
-                <button type="submit" class="btn btn-primary">Valider</button>
-            </form>
+            }
+
 
 
         </div>
         <div class="col-md-7">
 
-            <h3>Choix de candidat</h3>
+            <h3>Choix de candidat</h3
+         
+
         </div>
 
     </div>
