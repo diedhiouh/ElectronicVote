@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Election.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -30,6 +31,31 @@ namespace Election.Controllers
         public ActionResult Election()
         {
             return View();
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult Election([Bind(Include = "cni")] Electeur electeur)
+        {
+            ElectionDatabaseEntities3 db = new ElectionDatabaseEntities3();
+
+            if (ModelState.IsValid)
+            {
+                foreach (Electeur e in db.Electeur.ToList<Electeur>())
+                {
+                    if (e.cni.Equals(electeur.cni))
+                    {
+                        ViewBag.message = "AUTORISE";
+                    }
+                    else
+                    {
+                        ViewBag.message = "NON AUTORISE";
+                    }
+                }
+                //return RedirectToAction("Index");
+            }
+
+            return View(electeur);
         }
 
         public ActionResult connexion()

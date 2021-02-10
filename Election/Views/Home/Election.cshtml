@@ -1,4 +1,4 @@
-﻿
+﻿@model Election.Models.Electeur
 @{
     ViewBag.Title = "Election";
 }
@@ -10,11 +10,39 @@
     <div class="row">
         <div class="col-md-5">
 
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.cni, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.cni, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.cni, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Soumettre" class="btn btn-primary" />
+                        </div>
+                        <span class="text-danger">@ViewBag.message</span>
+
+                    </div>
+                </div>
+            }
+
+
             @{
                 if (ViewBag.voir == false)
                 {
                     <form>
-                        
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">Numero carte d'identite national</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre votre numero d'identite">
@@ -32,8 +60,10 @@
         </div>
         <div class="col-md-7">
 
-            <h3>Choix de candidat</h3
-         
+            <h3>
+                Choix de candidat
+            </h3>
+
 
         </div>
 

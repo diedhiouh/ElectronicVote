@@ -89,3 +89,4 @@ C:\Users\Habib\source\repos\Election\Election\obj\Debug\Election.csproj.CoreComp
 C:\Users\Habib\source\repos\Election\Election\obj\Debug\Election.csproj.CopyComplete
 C:\Users\Habib\source\repos\Election\Election\obj\Debug\Election.dll
 C:\Users\Habib\source\repos\Election\Election\obj\Debug\Election.pdb
+C:\Users\Habib\source\repos\Election\Election\obj\Debug\Election.csprojAssemblyReference.cache
