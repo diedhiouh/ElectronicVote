@@ -18,6 +18,8 @@ namespace Election.Controllers
 
         public ActionResult Connexion()
         {
+        
+
             return View();
         }
 
@@ -29,6 +31,8 @@ namespace Election.Controllers
         public ActionResult Connexion([Bind(Include = "login,password")] Compte compte)
         {
             ElectionDatabaseEntities0 db = new ElectionDatabaseEntities0();
+
+       
 
             if (ModelState.IsValid)
             {

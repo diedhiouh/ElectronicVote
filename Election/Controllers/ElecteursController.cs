@@ -38,6 +38,10 @@ namespace Election.Controllers
         // GET: Electeurs/Create
         public ActionResult Create()
         {
+            ElectionDatabaseEntities2 db = new ElectionDatabaseEntities2();
+            ViewBag.liste = db.BureauVote.ToList<BureauVote>();
+            
+            
             return View();
         }
 

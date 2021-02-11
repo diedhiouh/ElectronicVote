@@ -30,6 +30,10 @@ namespace Election.Controllers
 
         public ActionResult Election()
         {
+            ElectionDatabaseEntities dbcand = new ElectionDatabaseEntities();
+
+            List<Candidat> cand = dbcand.Candidat.ToList<Candidat>();
+            ViewBag.candidats = cand;
             return View();
         }
 
