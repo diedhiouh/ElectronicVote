@@ -63,6 +63,11 @@
            
             <div class="row">
                 @{
+                    foreach (var item in @ViewBag.electeur)
+                    {
+                        <h3>@item.prenom @item.nom</h3>
+                    }
+
                     if (ViewBag.voir == true)
                     {
                         <h3>
@@ -72,10 +77,13 @@
                         {
                             <button class="col-md-3" style="border:2px solid; margin-left:40px;" id="carte">
                                 <h4 id="nomcand"> @item.prenom @item.nom</h4>
+
                                 <span>Parti:</span>  <h4>@item.parti</h4>
                                 ne le <h4>@item.datenaiss</h4>
 
                                 <input type="radio" name="name" id="choix" />
+
+                                @Html.RadioButton("Gender", "")
                             </button>
 
                         }

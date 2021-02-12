@@ -9,6 +9,8 @@ namespace Election.Controllers
 {
     public class HomeController : Controller
     {
+        Electeur elect = new Electeur();
+
         public ActionResult Index()
         {
             return View();
@@ -34,6 +36,7 @@ namespace Election.Controllers
 
             List<Candidat> cand = dbcand.Candidat.ToList<Candidat>();
             ViewBag.candidats = cand;
+            ViewBag.electeur = this.elect;
             return View();
         }
 
@@ -49,6 +52,8 @@ namespace Election.Controllers
                 {
                     if (e.cni.Equals(electeur.cni))
                     {
+                        ViewBag.voir = true;
+                        this.elect = e;
                         ViewBag.message = "AUTORISE";
                     }
                     else
