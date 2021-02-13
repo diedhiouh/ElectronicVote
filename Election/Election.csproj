@@ -346,6 +346,7 @@
     <Content Include="Views\Candidats\Details.cshtml" />
     <Content Include="Views\Candidats\Edit.cshtml" />
     <Content Include="Views\Candidats\Index.cshtml" />
+    <Content Include="Views\Home\voter.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

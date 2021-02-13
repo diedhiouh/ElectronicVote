@@ -55,71 +55,10 @@
 
             }
 
-
-
         </div>
         <div class="col-md-7">
 
            
-            <div class="row">
-                @{
-                    foreach (var item in @ViewBag.electeur)
-                    {
-                        <h3>@item.prenom @item.nom</h3>
-                    }
-
-                    if (ViewBag.voir == true)
-                    {
-                        <h3>
-                            Choix de candidat
-                        </h3>
-                        foreach (var item in @ViewBag.candidats)
-                        {
-                            <button class="col-md-3" style="border:2px solid; margin-left:40px;" id="carte">
-                                <h4 id="nomcand"> @item.prenom @item.nom</h4>
-
-                                <span>Parti:</span>  <h4>@item.parti</h4>
-                                ne le <h4>@item.datenaiss</h4>
-
-                                <input type="radio" name="name" id="choix" />
-
-                                @Html.RadioButton("Gender", "")
-                            </button>
-
-                        }
-
-                        <div class="row">
-                            <button type="submit" class="btn btn-success" id="vote"><span class="glyphicon glyphicon-folder-close"></span> JE VOTE POUR CE CANDIDAT</button>
-                        </div>
-                    }
-
-
-                }
-            </div>
-           
         </div>
     </div>
 </div>
-
-<style>
-    h4{
-        color:blue;
-        font-weight: bold;
-
-    }
-    #nomcand{
-        border-bottom:3px solid gray;
-        text-align: center;
-    }
-    #vote{
-        margin:10px;
-        font-size: 24px;
-        width: 100%;
-    }
-    #choix{
-        font-size: 30px;
-    }
-    #carte:hover{
-        background-color: springgreen;
-    }
-</style>

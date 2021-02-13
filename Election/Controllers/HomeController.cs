@@ -9,6 +9,7 @@ namespace Election.Controllers
 {
     public class HomeController : Controller
     {
+
         Electeur elect = new Electeur();
 
         public ActionResult Index()
@@ -32,11 +33,7 @@ namespace Election.Controllers
 
         public ActionResult Election()
         {
-            ElectionDatabaseEntities dbcand = new ElectionDatabaseEntities();
-
-            List<Candidat> cand = dbcand.Candidat.ToList<Candidat>();
-            ViewBag.candidats = cand;
-            ViewBag.electeur = this.elect;
+           
             return View();
         }
 
@@ -55,6 +52,7 @@ namespace Election.Controllers
                         ViewBag.voir = true;
                         this.elect = e;
                         ViewBag.message = "AUTORISE";
+                        return Redirect("voter");
                     }
                     else
                     {
@@ -72,6 +70,29 @@ namespace Election.Controllers
 
             ViewBag.voir = false;
 
+            return View();
+        }
+
+       
+        public ActionResult voter()
+        {
+            ViewBag.message = "m";
+
+            ElectionDatabaseEntities dbcand = new ElectionDatabaseEntities();
+            List<Candidat> cand = dbcand.Candidat.ToList<Candidat>();
+            ViewBag.candidats = new Candidat();
+            ViewBag.electeur = this.elect;
+            return View(dbcand.Candidat.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult voter(Candidat id)
+        {
+            ViewBag.message = "m";
+            if (ModelState.IsValid)
+            {
+                ViewBag.message = "CANDIDAT" + id;
+            }
             return View();
         }
     }
