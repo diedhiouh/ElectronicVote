@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ElectionDatabaseModel1StoreContainer" CdmEntityContainer="ElectionDatabaseEntities4">
+    <EntitySetMapping Name="Candidat">
+      <EntityTypeMapping TypeName="ElectionDatabaseModel1.Candidat">
+        <MappingFragment StoreEntitySet="Candidat">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="parti" ColumnName="parti" />
+          <ScalarProperty Name="datenaiss" ColumnName="datenaiss" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="voix" ColumnName="voix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

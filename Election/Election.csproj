@@ -161,7 +161,7 @@
       <DependentUpon>Candidat.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Candidat.cs">
-      <DependentUpon>Candidat.tt</DependentUpon>
+      <DependentUpon>Candidate.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Candidat.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -172,6 +172,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Candidat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Candidate.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Candidate.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Candidate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Candidate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Candidate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Candidate.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Compte.Context.cs">
       <AutoGen>True</AutoGen>
@@ -246,6 +261,16 @@
       <DependentUpon>Candidat.edmx</DependentUpon>
       <LastGenOutput>Candidat1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Candidate.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Candidate.edmx</DependentUpon>
+      <LastGenOutput>Candidate.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Candidate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Candidate.edmx</DependentUpon>
+      <LastGenOutput>Candidate.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Compte.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Compte.edmx</DependentUpon>
@@ -295,6 +320,13 @@
     </EntityDeploy>
     <Content Include="Models\Candidat.edmx.diagram">
       <DependentUpon>Candidat.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Candidate.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Candidate.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Candidate.edmx.diagram">
+      <DependentUpon>Candidate.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

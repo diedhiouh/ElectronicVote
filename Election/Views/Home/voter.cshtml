@@ -18,36 +18,38 @@
             <div class="row">
                 @{
 
-//if (ViewBag.voir == true)
-//{
+                    //if (ViewBag.voir == true)
+                    //{
                     <h3>
                         Choix de candidat
                     </h3>
                     @ViewBag.message
                     using (@Html.BeginForm())
-                                {
-                                    foreach (var item in Model)
-                                    {
+                    {
+                        foreach (var item in Model)
+                        {
+                                
                             <div class="col-md-3" style="border:2px solid; margin-left:40px;" id="carte">
                                 <h4 id="nomcand">
+                                    @Html.DisplayFor(modelItem => item.voix)
                                     @Html.DisplayFor(modelItem => item.prenom)
-                                @Html.DisplayFor(modelItem => item.nom)
-                            </h4>
+                                    @Html.DisplayFor(modelItem => item.nom)
+                                </h4>
 
-                            <span>Parti:</span>  <h4>@item.parti</h4>
-                            ne le <h4>  @Html.DisplayFor(modelItem => item.datenaiss)</h4>
-                                  <h2>  @Html.RadioButton("candidat", item.Id, true) </h2>
-                              
+                                <span>Parti:</span>  <h4>@item.parti</h4>
+                                ne le <h4>  @Html.DisplayFor(modelItem => item.datenaiss)</h4>
+
+
+                                <span id="votons" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+
+                                    @Html.ActionLink("JE VOTE", "voter", new { id = item.Id })
+                                </span>
                             </div>
+
+                            <!-- Modal -->
+                           
                         }
-
-                    <div class="row">
-
-                        <button type="submit" class="btn btn-success" id="vote"><span class="glyphicon glyphicon-folder-close"></span> JE VOTE POUR CE CANDIDAT</button>
-                    </div>
                     }
-
-
                 }
             </div>
 
@@ -78,5 +80,18 @@
 
     #carte:hover {
         background-color: springgreen;
+    }
+    #carte{
+        text-align: center;
+    }
+    #votons{
+        text-decoration: none;
+        color: white;
+        font-size:24px;
+        
+    }
+    #voton a:hover{
+        text-decoration: none;
+        color: red;
     }
 </style>

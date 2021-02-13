@@ -1,7 +1,9 @@
 ﻿using Election.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -33,7 +35,7 @@ namespace Election.Controllers
 
         public ActionResult Election()
         {
-           
+
             return View();
         }
 
@@ -73,27 +75,56 @@ namespace Election.Controllers
             return View();
         }
 
-       
-        public ActionResult voter()
-        {
-            ViewBag.message = "m";
 
+        public ActionResult voter(int? id)
+        { 
             ElectionDatabaseEntities dbcand = new ElectionDatabaseEntities();
-            List<Candidat> cand = dbcand.Candidat.ToList<Candidat>();
-            ViewBag.candidats = new Candidat();
-            ViewBag.electeur = this.elect;
-            return View(dbcand.Candidat.ToList());
-        }
-
-        [HttpPost]
-        public ActionResult voter(Candidat id)
-        {
             ViewBag.message = "m";
-            if (ModelState.IsValid)
+
+            if (id != null)
             {
-                ViewBag.message = "CANDIDAT" + id;
+                Candidat candidat = dbcand.Candidat.Find(id);
+                candidat.prenom = "Habib";
+                dbcand.Entry(candidat).State = EntityState.Modified;
+                dbcand.SaveChanges();
+
+                //return Redirect("Home");
             }
-            return View();
+
+
+           
+                List<Candidat> cand = dbcand.Candidat.ToList<Candidat>();
+                //ViewBag.candidats = new Candidat();
+                //ViewBag.electeur = this.elect;
+                return View(dbcand.Candidat.ToList());
+            }
+
+
+            //[HttpPost]
+            //public ActionResult voter(int? id)
+            //{
+
+            //    ElectionDatabaseEntities dbcand = new ElectionDatabaseEntities();
+            //    //Console.WriteLine("Mon id est "+id);
+            //    ViewBag.message = "message ";
+
+            //    //if (id == null)
+            //    //{
+            //    //    ViewBag.message = "message " + id;
+            //    //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //    //}
+            //    Candidat candidat = dbcand.Candidat.Find(id);
+            //    //if (candidat == null)
+            //    //{
+            //    //    ViewBag.message = "message " + id;
+            //    //    return HttpNotFound();
+            //    //}
+            //    if (id != null)
+            //        return Redirect("Home");
+            //    {
+
+            //    }
+            //    return View(candidat);
+            //}
         }
-    }
-}
+ }
