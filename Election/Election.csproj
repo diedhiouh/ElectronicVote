@@ -309,8 +309,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\admin.jpg" />
+    <Content Include="Content\images\cand.jpg" />
+    <Content Include="Content\images\elect.jpg" />
     <Content Include="Content\images\image.png" />
     <Content Include="Content\images\mznn.jpg" />
+    <Content Include="Content\images\people.png" />
+    <Content Include="Content\images\users-top.png" />
     <Content Include="Content\images\vote.jpg" />
     <Content Include="Content\images\votes.jpg" />
     <Content Include="Content\Style.css" />

@@ -13,6 +13,20 @@ namespace Election.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            ElectionDatabaseEntities dbcand = new ElectionDatabaseEntities();
+            ElectionDatabaseEntities2 dbbureau = new ElectionDatabaseEntities2();
+            ElectionDatabaseEntities0 dbcompte = new ElectionDatabaseEntities0();
+            ElectionDatabaseEntities3 dbelect = new ElectionDatabaseEntities3();
+
+            int ncand = dbcand.Candidat.ToList<Candidat>().Count();
+            int nelect = dbelect.Electeur.ToList<Electeur>().Count();
+            int nadmin = dbcompte.Compte.ToList<Compte>().Count();
+            int nbureau = dbbureau.BureauVote.ToList<BureauVote>().Count();
+
+            ViewBag.candidats = ncand;
+            ViewBag.electeurs = nelect;
+            ViewBag.admins = nadmin;
+            ViewBag.bureaux = nbureau;
             return View();
         }
 
