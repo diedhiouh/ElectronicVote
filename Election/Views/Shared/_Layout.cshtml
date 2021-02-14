@@ -1,15 +1,80 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mon application ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    @*<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+        <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+        <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/vendor/nivo-slider/css/nivo-slider.css" rel="stylesheet">
+        <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">*@
+    <link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/vendor/nivo-slider/css/nivo-slider.css" rel="stylesheet" />
+    <link href="~/Content/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <link href="~/Content/assets/vendor/venobox/venobox.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File <link href="assets/css/style.css" rel="stylesheet">-->
+    <link href="~/Content/assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex">
+
+            <div class="logo mr-auto">
+                <h1 class="text-light"><a @Html.ActionLink("<", "Index", "Home") ><span>Electro</span>Vote</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active">
+                        @Html.ActionLink("Accueil", "Index", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Election", "Election", "Home")
+                    </li>
+                    <li>
+                    <li>
+                        @Html.ActionLink("Contact", "Contact", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Administration", "Connexion", "Admin")
+                    </li>
+                    <li>
+                        @Html.ActionLink("À propos de", "About", "Home")
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+    </header><!-- End Header -->
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -30,12 +95,47 @@
 
             </div>
         </div>
-    </div>
+    </div>*@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mon application ASP.NET</p>
+        <footer class="bg-light text-center text-lg-start">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <form action="">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-auto mb-4 mb-md-0">
+                            <p class="pt-2"><strong>S'inscrire au Newsletter</strong></p>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-md-5 col-12 mb-4 mb-md-0">
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <input type="email" id="form5Example2" class="form-control" />
+                                <label class="form-label" for="form5Example2">Email address</label>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-auto mb-4 mb-md-0">
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary mb-4">Subscribe</button>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </form>
+            </div>
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2020 Copyright: ElectroVote designed by Habibou DIEDHIOU and El Hadji Code Ndiaye
+               
+            </div>
+            <!-- Copyright -->
         </footer>
     </div>
 

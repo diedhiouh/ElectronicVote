@@ -98,7 +98,7 @@ namespace Election.Controllers
                 dbcand.SaveChanges();
                 ViewBag.prenom = this.elect.prenom;
 
-                return RedirectToAction("index");
+                return RedirectToAction("index/");
             }
             else
             {

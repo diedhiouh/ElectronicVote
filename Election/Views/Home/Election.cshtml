@@ -5,7 +5,7 @@
 
 
 
-<div class="container-fluid">
+<div class="container" id="contain">
     <h2 class="jumbotron">Election</h2>
     <div class="row">
         <div class="col-md-5">
@@ -20,7 +20,7 @@
 
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.cni, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.cni, htmlAttributes: new { @class = "control-label col-md-2"})
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.cni, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.cni, "", new { @class = "text-danger" })
@@ -62,3 +62,8 @@
         </div>
     </div>
 </div>
+<style>
+    #contain{
+       height:400px;
+    }
+</style>
