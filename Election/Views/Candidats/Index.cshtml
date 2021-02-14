@@ -2,7 +2,6 @@
 @{
     Layout = "~/Views/Shared/_admin.cshtml";
 }
-
 @{
     ViewBag.Title = "Index";
 }
@@ -39,7 +38,7 @@
             <p>
                 @Html.ActionLink("Create New", "Create")
             </p>
-            <table class="table table-responsive">
+            <table class="table">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.prenom)
@@ -55,6 +54,9 @@
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.photo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.voix)
                     </th>
                     <th></th>
                 </tr>
@@ -76,6 +78,9 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.photo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.voix)
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

@@ -8,11 +8,11 @@
 <div class="container-fluid">
     <h2 class="jumbotron">Vote</h2>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-2">
 
 
         </div>
-        <div class="col-md-8">
+        <div class="col-md-10">
 
 
             <div class="row">
@@ -23,33 +23,52 @@
                     <h3>
                         Choix de candidat
                     </h3>
-                    @ViewBag.message
+
                     using (@Html.BeginForm())
+                    { 
+                    @ViewBag.prenom
+                    foreach (var item in Model)
                     {
-                        foreach (var item in Model)
-                        {
-                                
-                            <div class="col-md-3" style="border:2px solid; margin-left:40px;" id="carte">
-                                <h4 id="nomcand">
-                                    @Html.DisplayFor(modelItem => item.voix)
-                                    @Html.DisplayFor(modelItem => item.prenom)
-                                    @Html.DisplayFor(modelItem => item.nom)
-                                </h4>
+                        <div class="col-md-3" style="border:2px solid; margin-left:40px;" id="carte">
+                            <h3>
+                                @Html.DisplayFor(modelItem => item.voix)
+                                @Html.DisplayFor(modelItem => item.prenom)
+                            </h3>
+                            <h3 id="nomcand">
+                                @Html.DisplayFor(modelItem => item.nom)
+                            </h3>
 
-                                <span>Parti:</span>  <h4>@item.parti</h4>
-                                ne le <h4>  @Html.DisplayFor(modelItem => item.datenaiss)</h4>
+                            <span>Parti:</span>  <h4>@item.parti</h4>
+                            ne le <h4>  @Html.DisplayFor(modelItem => item.datenaiss)</h4>
 
 
-                                <span id="votons" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+                            <span id="votons" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
 
-                                    @Html.ActionLink("JE VOTE", "voter", new { id = item.Id })
-                                </span>
-                            </div>
+                                @Html.ActionLink("JE VOTE", "voter", new { id = item.Id })
+                            </span>
+                        </div>
 
-                            <!-- Modal -->
-                           
-                        }
                     }
+                }
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 }
             </div>
 
@@ -88,10 +107,11 @@
         text-decoration: none;
         color: white;
         font-size:24px;
-        
+        background-color: darkorange;
     }
-    #voton a:hover{
+    #votons:hover{
         text-decoration: none;
         color: red;
     }
+
 </style>

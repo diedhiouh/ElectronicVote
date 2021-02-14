@@ -14,6 +14,11 @@ namespace Election.Controllers
 
         Electeur elect = new Electeur();
 
+        public ActionResult Home()
+        {
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -52,7 +57,7 @@ namespace Election.Controllers
                     if (e.cni.Equals(electeur.cni))
                     {
                         ViewBag.voir = true;
-                        this.elect = e;
+                        this.elect = electeur;
                         ViewBag.message = "AUTORISE";
                         return Redirect("voter");
                     }
@@ -78,26 +83,33 @@ namespace Election.Controllers
 
         public ActionResult voter(int? id)
         { 
+#pragma warning disable CS0246 // Le nom de type ou d'espace de noms 'ElectionDatabaseEntities' est introuvable (vous manque-t-il une directive using ou une référence d'assembly ?)
+#pragma warning disable CS0246 // Le nom de type ou d'espace de noms 'ElectionDatabaseEntities' est introuvable (vous manque-t-il une directive using ou une référence d'assembly ?)
             ElectionDatabaseEntities dbcand = new ElectionDatabaseEntities();
-            ViewBag.message = "m";
+#pragma warning restore CS0246 // Le nom de type ou d'espace de noms 'ElectionDatabaseEntities' est introuvable (vous manque-t-il une directive using ou une référence d'assembly ?)
+#pragma warning restore CS0246 // Le nom de type ou d'espace de noms 'ElectionDatabaseEntities' est introuvable (vous manque-t-il une directive using ou une référence d'assembly ?)
 
+            ViewBag.prenom = "";
             if (id != null)
             {
                 Candidat candidat = dbcand.Candidat.Find(id);
-                candidat.prenom = "Habib";
+                candidat.voix = candidat.voix+1;
                 dbcand.Entry(candidat).State = EntityState.Modified;
                 dbcand.SaveChanges();
+                ViewBag.prenom = this.elect.prenom;
 
-                //return Redirect("Home");
+                return RedirectToAction("index");
             }
-
-
-           
-                List<Candidat> cand = dbcand.Candidat.ToList<Candidat>();
+            else
+            {
+                 List<Candidat> cand = dbcand.Candidat.ToList<Candidat>();
+                
                 //ViewBag.candidats = new Candidat();
                 //ViewBag.electeur = this.elect;
+                
                 return View(dbcand.Candidat.ToList());
-            }
+            }    
+        }
 
 
             //[HttpPost]

@@ -10,6 +10,7 @@
           <ScalarProperty Name="parti" ColumnName="parti" />
           <ScalarProperty Name="datenaiss" ColumnName="datenaiss" />
           <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="voix" ColumnName="voix" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

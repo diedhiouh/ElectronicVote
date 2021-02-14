@@ -46,7 +46,7 @@ namespace Election.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,prenom,nom,parti,datenaiss,photo")] Candidat candidat)
+        public ActionResult Create([Bind(Include = "Id,prenom,nom,parti,datenaiss,photo,voix")] Candidat candidat)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Election.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,prenom,nom,parti,datenaiss,photo")] Candidat candidat)
+        public ActionResult Edit([Bind(Include = "Id,prenom,nom,parti,datenaiss,photo,voix")] Candidat candidat)
         {
             if (ModelState.IsValid)
             {

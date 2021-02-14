@@ -10,6 +10,7 @@
     <Property Name="parti" Type="varchar" MaxLength="50" />
     <Property Name="datenaiss" Type="date" />
     <Property Name="photo" Type="image" />
+    <Property Name="voix" Type="int" />
   </EntityType>
   <EntityContainer Name="ElectionDatabaseModelStoreContainer">
     <EntitySet Name="Candidat" EntityType="Self.Candidat" Schema="dbo" store:Type="Tables" />
