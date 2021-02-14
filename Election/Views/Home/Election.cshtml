@@ -9,7 +9,8 @@
     <h2 class="jumbotron">Election</h2>
     <div class="row">
         <div class="col-md-5">
-
+            <h4>Entrez votre numero carte d'identite</h4>
+            <h3 style="text-align:center;"> <span class="glyphicon glyphicon-arrow-down"></span></h3>
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
@@ -57,13 +58,14 @@
 
         </div>
         <div class="col-md-7">
-
+            <img src="~/Content/images/votes.jpg" />
            
         </div>
     </div>
 </div>
 <style>
     #contain{
-       height:400px;
+       height:500px;
     }
 </style>
+

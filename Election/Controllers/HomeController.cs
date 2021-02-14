@@ -58,8 +58,9 @@ namespace Election.Controllers
                     {
                         ViewBag.voir = true;
                         this.elect = electeur;
+                        string myurl = "voter/" + e.cni;
                         ViewBag.message = "AUTORISE";
-                        return Redirect("voter");
+                        return Redirect(myurl);
                     }
                     else
                     {
@@ -89,6 +90,9 @@ namespace Election.Controllers
 #pragma warning restore CS0246 // Le nom de type ou d'espace de noms 'ElectionDatabaseEntities' est introuvable (vous manque-t-il une directive using ou une référence d'assembly ?)
 #pragma warning restore CS0246 // Le nom de type ou d'espace de noms 'ElectionDatabaseEntities' est introuvable (vous manque-t-il une directive using ou une référence d'assembly ?)
 
+            ElectionDatabaseEntities3 db = new ElectionDatabaseEntities3();
+           // Electeur electeur = db.Electeur.Find(cni);
+
             ViewBag.prenom = "";
             if (id != null)
             {
@@ -97,7 +101,6 @@ namespace Election.Controllers
                 dbcand.Entry(candidat).State = EntityState.Modified;
                 dbcand.SaveChanges();
                 ViewBag.prenom = this.elect.prenom;
-
                 return RedirectToAction("index/");
             }
             else

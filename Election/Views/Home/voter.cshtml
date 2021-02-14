@@ -26,7 +26,7 @@
 
                     using (@Html.BeginForm())
                     { 
-                    @ViewBag.prenom
+                    <h4> @ViewBag.prenom</h4>
                     foreach (var item in Model)
                     {
                         <div class="col-md-3" style="border:2px solid; margin-left:40px;" id="carte">
@@ -42,7 +42,7 @@
                             ne le <h4>  @Html.DisplayFor(modelItem => item.datenaiss)</h4>
 
 
-                            <span id="votons" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+                            <span id="votons" class="btn btn-default" data-toggle="modal" data-target="#exampleModalLabel">
 
                                 @Html.ActionLink("JE VOTE", "voter", new { id = item.Id })
                             </span>
@@ -116,3 +116,11 @@
         height: 550px;
     }
 </style>
+
+<script>
+    document.getElementById("votons").click(
+        () => {
+            alert("Votre vote est enregistrer");
+        }
+    );
+</script>

@@ -312,6 +312,7 @@
     <Content Include="Content\images\image.png" />
     <Content Include="Content\images\mznn.jpg" />
     <Content Include="Content\images\vote.jpg" />
+    <Content Include="Content\images\votes.jpg" />
     <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
