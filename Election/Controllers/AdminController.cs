@@ -22,11 +22,18 @@ namespace Election.Controllers
             int nelect = dbelect.Electeur.ToList<Electeur>().Count();
             int nadmin = dbcompte.Compte.ToList<Compte>().Count();
             int nbureau = dbbureau.BureauVote.ToList<BureauVote>().Count();
+            int total = 0;
+            foreach (var item in dbcand.Candidat.ToList<Candidat>())
+            {
+                total = (int)(total + item.voix);
+            }
 
             ViewBag.candidats = ncand;
             ViewBag.electeurs = nelect;
             ViewBag.admins = nadmin;
             ViewBag.bureaux = nbureau;
+            ViewBag.listecand = dbcand.Candidat.ToList<Candidat>();
+            ViewBag.totalcandidat = total;
             return View();
         }
 

@@ -62,11 +62,33 @@
                 </div>
             </div>
             <h3>Statistique</h3>
-
           
         </div>
         </div>
     </div>
+<div class="row">
+    <h2>RESULTAT DE L'ELECTION</h2>
+
+    <div class="col-md-5">
+        <table class="table">
+            <tr>
+                <th>Candidat</th>
+                <th>Parti</th>
+                <th>Voix</th>
+            </tr>
+            @{ 
+                foreach (var item in @ViewBag.listecand)
+                {
+                    <tr>
+                        <td>@item.prenom @item.nom</td>
+                        <td>@item.parti</td>
+                        <td>@item.voix</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
 <style>
     #carte {
         border-right: 2px solid;

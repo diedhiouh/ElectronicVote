@@ -21,6 +21,29 @@ namespace Election.Controllers
 
         public ActionResult Index()
         {
+            ElectionDatabaseEntities dbcand = new ElectionDatabaseEntities();
+            ElectionDatabaseEntities2 dbbureau = new ElectionDatabaseEntities2();
+            ElectionDatabaseEntities0 dbcompte = new ElectionDatabaseEntities0();
+            ElectionDatabaseEntities3 dbelect = new ElectionDatabaseEntities3();
+
+            int ncand = dbcand.Candidat.ToList<Candidat>().Count();
+            int nelect = dbelect.Electeur.ToList<Electeur>().Count();
+            int nadmin = dbcompte.Compte.ToList<Compte>().Count();
+            int nbureau = dbbureau.BureauVote.ToList<BureauVote>().Count();
+
+            int total = 0;
+            foreach (var item in dbcand.Candidat.ToList<Candidat>())
+            {
+                total = (int)(total + item.voix);
+            }
+
+            ViewBag.candidats = ncand;
+            ViewBag.electeurs = nelect;
+            ViewBag.admins = nadmin;
+            ViewBag.bureaux = nbureau;
+            ViewBag.listecand = dbcand.Candidat.ToList<Candidat>();
+            ViewBag.totalvoix = total;
+
             return View();
         }
 
@@ -54,17 +77,22 @@ namespace Election.Controllers
             {
                 foreach (Electeur e in db.Electeur.ToList<Electeur>())
                 {
-                    if (e.cni.Equals(electeur.cni))
+                    if (e.cni.Equals(electeur.cni) && (e.avoter == 0))
                     {
+                        Electeur el = e;
                         ViewBag.voir = true;
                         this.elect = electeur;
-                        string myurl = "voter/" + e.cni;
+                        string myurl = "voter";
                         ViewBag.message = "AUTORISE";
+                        el.avoter = 1;
+                        db.Entry(el).State = EntityState.Modified;
+                        db.SaveChanges();
+
                         return Redirect(myurl);
                     }
                     else
                     {
-                        ViewBag.message = "NON AUTORISE";
+                        ViewBag.message = "VOUS AVEZ DEJA VOTE";
                     }
                 }
                 //return RedirectToAction("Index");

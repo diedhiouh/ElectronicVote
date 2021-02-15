@@ -46,10 +46,12 @@ namespace Election.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,code,lieu")] BureauVote bureauVote)
+        public ActionResult Create([Bind(Include = "code,lieu")] BureauVote bureauVote)
         {
             if (ModelState.IsValid)
             {
+                BureauVote v = db.BureauVote.ToList<BureauVote>().Last();
+                bureauVote.Id = v.Id + 1;
                 db.BureauVote.Add(bureauVote);
                 db.SaveChanges();
                 return RedirectToAction("Index");

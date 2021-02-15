@@ -6,7 +6,7 @@
     <div class="bend niceties preview-2">
         <div id="ensign-nivoslider" class="slides">
 
-            <img src="~/Content/images/vote.jpg" style="width: 100%; height: 150px;" />
+            <img src="~/Content/images/vote.jpg" style="width: 100%; height: 170px;" />
         </div>
 
         <!-- direction 1 -->
@@ -39,76 +39,101 @@
 
     <div class="jumbotron">
         <h1>VOTE ELECTRONIQUE</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS .</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <p class="lead">PLATEFORME DE VOTE EN LIGNE ET DE DELIBERATION EN LIVE.</p>
+        <p><a href="Home/About" class="btn btn-primary btn-lg">Plus de details &raquo;</a></p>
     </div>
     <h2 id="mytexte">INFORMATION GENERALE</h2>
     <div class="row" id="myrow">
         <div class="col-3">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
+
                 <div class="card-body">
-                    <h5 class="card-title">NOMBRE BUREAU</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">NOMBRE BUREAU DE VOTE</h5>
+                    <h2></h2>
+                       <p>
+                           <h1 style="color: blue; font-size: 40px; font-weight: bolder; margin-top:20px;">@ViewBag.bureaux</h1>
+                       </p>
                 </div>
             </div>
         </div>
 
         <div class="col-3">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
+
                 <div class="card-body">
                     <h5 class="card-title">NOMBRE DE VOIX</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <table class="table">
+                        <tr>
+                            <th>Candidat</th>
+                            <th>Voix</th>
+                        </tr>
+                        @{
+                            foreach (var item in @ViewBag.listecand)
+                            {
+                                <tr>
+                                    <td>@item.prenom @item.nom</td>
+                                    <td>@item.voix</td>
+                                </tr>
+                            }
+                        }
+                    </table>
                 </div>
             </div>
         </div>
 
         <div class="col-3">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
+
                 <div class="card-body">
-                    <h5 class="card-title">POURCENTAGE</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">ORDRE PAR PARTI</h5>
+                    <table class="table">
+                        <tr>
+                            <th>Parti</th>
+                            <th>Voix</th>
+                        </tr>
+                        @{
+                            foreach (var item in @ViewBag.listecand)
+                            {
+                                <tr>
+                                    <td>@item.parti</td>
+                                    <td>@item.voix</td>
+                                </tr>
+                            }
+                        }
+                    </table>
                 </div>
             </div>
         </div>
 
         <div class="col-3">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
+
                 <div class="card-body">
-                    <h5 class="card-title">TOTAL VOTANT</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">TOTAL NOMBRE VOTANT</h5>
+                    <h2></h2>
+                    <p>
+                        <h1 style="color: orangered; font-size: 40px; font-weight: bolder; margin-top:20px;">@ViewBag.totalvoix</h1>
+                    </p>
                 </div>
             </div>
         </div>
 </div>
-        <h2  id="mytexte">FONCTIONNALITE</h2>
+        <h2  id="mytexte">FONCTIONNALITES</h2>
 
         <div class="row" id="myrow">
             <div class="col-md-4">
-                <h2>Getting started</h2>
+                <h2>VOTEZ EN SECURITE</h2>
                 <p>
-                    ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                    enables a clean separation of concerns and gives you full control over markup
-                    for enjoyable, agile development.
+                    Votez en toute securite et en tranquite dans la plafeforme. Assurez vous d'entrer le bon numero de votre carte d'identite national
                 </p>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
             </div>
             <div class="col-md-4">
-                <h2>Get more libraries</h2>
-                <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+                <h2>SUIVRE LES RESULTATS</h2>
+                <p>Suivez l'evolution du vote en direct. Les informations sont fiables et sont donnees par la comite de gestion du vote</p>
             </div>
             <div class="col-md-4">
-                <h2>Web Hosting</h2>
-                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+                <h2>Acces Mondial</h2>
+                <p>Votez sur place. ElectroVote est accessible partout dans le monde. </p>
             </div>
         </div>
     </div>
@@ -119,5 +144,8 @@
         margin: 25px;
         background-color: cornflowerblue;
         font-weight: bold;
+    }
+    h5{
+        border-bottom: 2px solid blue;
     }
 </style>

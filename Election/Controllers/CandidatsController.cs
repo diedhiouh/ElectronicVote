@@ -46,10 +46,13 @@ namespace Election.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,prenom,nom,parti,datenaiss,photo,voix")] Candidat candidat)
+        public ActionResult Create([Bind(Include = "prenom,nom,parti,datenaiss,photo,voix")] Candidat candidat)
         {
             if (ModelState.IsValid)
             {
+                Candidat c = db.Candidat.ToList<Candidat>().Last();
+                candidat.Id = c.Id + 1;
+                candidat.voix = 0;
                 db.Candidat.Add(candidat);
                 db.SaveChanges();
                 return RedirectToAction("Index");
