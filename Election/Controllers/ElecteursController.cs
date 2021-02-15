@@ -62,6 +62,7 @@ namespace Election.Controllers
             {
                 Electeur x = db.Electeur.ToList<Electeur>().Last();
                 electeur.Id = x.Id + 1;
+                electeur.avoter = 0;
                 db.Electeur.Add(electeur);
                 db.SaveChanges();
                 return RedirectToAction("Index");
