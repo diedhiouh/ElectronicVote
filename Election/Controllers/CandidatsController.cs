@@ -44,6 +44,7 @@ namespace Election.Controllers
         // POST: Candidats/Create
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "prenom,nom,parti,datenaiss,photo,voix")] Candidat candidat)
