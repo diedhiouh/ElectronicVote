@@ -26,7 +26,7 @@ namespace Election.Controllers
             ElectionDatabaseEntities3 dbelect = new ElectionDatabaseEntities3();
 
             int ncand = dbcand.Candidat.ToList<Candidat>().Count();
-            //int nelect = dbelect.Electeur.ToList<Electeur>().Count();
+            int nelect = dbelect.Electeur.ToList<Electeur>().Count();
             int nadmin = dbcompte.Compte.ToList<Compte>().Count();
 
             int total = 0;
@@ -35,8 +35,10 @@ namespace Election.Controllers
                 total = (int)(total + item.voix);
             }
 
+
+
             ViewBag.candidats = ncand;
-            ViewBag.electeurs = 0;
+            ViewBag.electeurs = nelect;
             ViewBag.admins = nadmin;
             ViewBag.listecand = dbcand.Candidat.ToList<Candidat>();
             ViewBag.totalvoix = total;
@@ -89,7 +91,7 @@ namespace Election.Controllers
                     }
                     else
                     {
-                        ViewBag.message = "VOUS AVEZ DEJA VOTE";
+                        ViewBag.message = "NUMERO N'EST PAS VALABLE POUR VOTER";
                     }
                 }
                 //return RedirectToAction("Index");
