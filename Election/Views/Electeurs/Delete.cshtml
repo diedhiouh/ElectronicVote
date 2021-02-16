@@ -2,17 +2,16 @@
 @{
     Layout = "~/Views/Shared/_admin.cshtml";
 }
-
 @{
-    ViewBag.Title = "Suppression";
+    ViewBag.Title = "Delete";
 }
 
-<h2  class="alert alert-danger">Supprimer</h2>
+<h2>Delete</h2>
 <div class="container">
     <div class="row">
-        
+
         <div class="col-sm-8">
-            <h3 class="alert alert">Etes vous sur de vouloir continuer la suppression?</h3>
+            <h3>Are you sure you want to delete this?</h3>
             <div>
                 <h4>Electeur</h4>
                 <hr />
@@ -57,22 +56,6 @@
                         @Html.DisplayFor(model => model.candidat)
                     </dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.bureau)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.bureau)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.compte)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.compte)
-                    </dd>
-
                 </dl>
 
                 @using (Html.BeginForm())
@@ -80,7 +63,7 @@
                     @Html.AntiForgeryToken()
 
                     <div class="form-actions no-color">
-                        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
                         @Html.ActionLink("Back to List", "Index")
                     </div>
                 }

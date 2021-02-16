@@ -38,16 +38,6 @@ namespace Election.Controllers
         // GET: Electeurs/Create
         public ActionResult Create()
         {
-            ElectionDatabaseEntities2 db = new ElectionDatabaseEntities2();
-            List<int> maliste = new List<int>();
-
-            foreach (var item in db.BureauVote.ToList<BureauVote>())
-            {
-                maliste.Add(item.Id);
-            }
-            ViewBag.liste = maliste;
-            
-            
             return View();
         }
 
@@ -56,13 +46,10 @@ namespace Election.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "prenom,nom,cni,avoter,bureau")] Electeur electeur)
+        public ActionResult Create([Bind(Include = "Id,prenom,nom,cni,avoter,candidat")] Electeur electeur)
         {
             if (ModelState.IsValid)
             {
-                Electeur x = db.Electeur.ToList<Electeur>().Last();
-                electeur.Id = x.Id + 1;
-                electeur.avoter = 0;
                 db.Electeur.Add(electeur);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -91,7 +78,7 @@ namespace Election.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,prenom,nom,cni,avoter,candidat,bureau,compte")] Electeur electeur)
+        public ActionResult Edit([Bind(Include = "Id,prenom,nom,cni,avoter,candidat")] Electeur electeur)
         {
             if (ModelState.IsValid)
             {

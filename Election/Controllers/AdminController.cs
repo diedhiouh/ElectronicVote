@@ -14,14 +14,12 @@ namespace Election.Controllers
         public ActionResult Index()
         {
             ElectionDatabaseEntities dbcand = new ElectionDatabaseEntities();
-            ElectionDatabaseEntities2 dbbureau = new ElectionDatabaseEntities2();
             ElectionDatabaseEntities0 dbcompte = new ElectionDatabaseEntities0();
             ElectionDatabaseEntities3 dbelect = new ElectionDatabaseEntities3();
 
             int ncand = dbcand.Candidat.ToList<Candidat>().Count();
-            int nelect = dbelect.Electeur.ToList<Electeur>().Count();
+            //int nelect = dbelect.Electeur.ToList<Electeur>().Count();
             int nadmin = dbcompte.Compte.ToList<Compte>().Count();
-            int nbureau = dbbureau.BureauVote.ToList<BureauVote>().Count();
             int total = 0;
             foreach (var item in dbcand.Candidat.ToList<Candidat>())
             {
@@ -29,9 +27,8 @@ namespace Election.Controllers
             }
 
             ViewBag.candidats = ncand;
-            ViewBag.electeurs = nelect;
+            ViewBag.electeurs = 0;
             ViewBag.admins = nadmin;
-            ViewBag.bureaux = nbureau;
             ViewBag.listecand = dbcand.Candidat.ToList<Candidat>();
             ViewBag.totalcandidat = total;
             return View();

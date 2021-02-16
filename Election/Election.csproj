@@ -157,31 +157,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\BureauVotesController.cs" />
     <Compile Include="Controllers\CandidatsController.cs" />
     <Compile Include="Controllers\ComptesController.cs" />
     <Compile Include="Controllers\ElecteursController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Bureau.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Bureau.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Bureau.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Bureau.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Bureau.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Bureau.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BureauVote.cs">
-      <DependentUpon>Bureau.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Candidat.Context.cs">
       <AutoGen>True</AutoGen>
@@ -351,16 +332,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Bureau.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Bureau.edmx</DependentUpon>
-      <LastGenOutput>Bureau.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Bureau.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Bureau.edmx</DependentUpon>
-      <LastGenOutput>Bureau.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\Candidat.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Candidat.edmx</DependentUpon>
@@ -400,20 +371,6 @@
     <Content Include="Models\Compte.edmx.diagram">
       <DependentUpon>Compte.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\Bureau.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Bureau.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Bureau.edmx.diagram">
-      <DependentUpon>Bureau.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\Electeur.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Electeur.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Electeur.edmx.diagram">
-      <DependentUpon>Electeur.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\Candidat.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Candidat.Designer.cs</LastGenOutput>
@@ -442,6 +399,13 @@
     <Content Include="Content\assets\vendor\jquery\jquery.min.map" />
     <Content Include="Content\assets\vendor\owl.carousel\LICENSE" />
     <Content Include="Content\assets\vendor\owl.carousel\README.md" />
+    <EntityDeploy Include="Models\Electeur.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Electeur.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Electeur.edmx.diagram">
+      <DependentUpon>Electeur.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -472,16 +436,6 @@
     <Content Include="Views\Comptes\Details.cshtml" />
     <Content Include="Views\Comptes\Edit.cshtml" />
     <Content Include="Views\Comptes\Index.cshtml" />
-    <Content Include="Views\BureauVotes\Create.cshtml" />
-    <Content Include="Views\BureauVotes\Delete.cshtml" />
-    <Content Include="Views\BureauVotes\Details.cshtml" />
-    <Content Include="Views\BureauVotes\Edit.cshtml" />
-    <Content Include="Views\BureauVotes\Index.cshtml" />
-    <Content Include="Views\Electeurs\Create.cshtml" />
-    <Content Include="Views\Electeurs\Delete.cshtml" />
-    <Content Include="Views\Electeurs\Details.cshtml" />
-    <Content Include="Views\Electeurs\Edit.cshtml" />
-    <Content Include="Views\Electeurs\Index.cshtml" />
     <Content Include="Views\Home\Election.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\connexion.cshtml" />
@@ -493,6 +447,11 @@
     <Content Include="Views\Candidats\Details.cshtml" />
     <Content Include="Views\Candidats\Edit.cshtml" />
     <Content Include="Views\Candidats\Index.cshtml" />
+    <Content Include="Views\Electeurs\Create.cshtml" />
+    <Content Include="Views\Electeurs\Delete.cshtml" />
+    <Content Include="Views\Electeurs\Details.cshtml" />
+    <Content Include="Views\Electeurs\Edit.cshtml" />
+    <Content Include="Views\Electeurs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
