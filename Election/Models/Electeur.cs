@@ -20,7 +20,5 @@ namespace Election.Models
         public string cni { get; set; }
         public Nullable<byte> avoter { get; set; }
         public Nullable<int> candidat { get; set; }
-        public Nullable<int> bureau { get; set; }
-        public Nullable<int> compte { get; set; }
     }
 }

@@ -2,15 +2,14 @@
 @{
     Layout = "~/Views/Shared/_admin.cshtml";
 }
-
 @{
     ViewBag.Title = "Details";
 }
 
-<h2  class="alert alert-info">Details</h2>
+<h2>Details</h2>
 <div class="container">
     <div class="row">
-        
+
         <div class="col-sm-8">
             <div>
                 <h4>Electeur</h4>
@@ -54,22 +53,6 @@
 
                     <dd>
                         @Html.DisplayFor(model => model.candidat)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.bureau)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.bureau)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.compte)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.compte)
                     </dd>
 
                 </dl>

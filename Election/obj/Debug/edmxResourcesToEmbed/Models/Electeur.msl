@@ -10,8 +10,6 @@
           <ScalarProperty Name="cni" ColumnName="cni" />
           <ScalarProperty Name="avoter" ColumnName="avoter" />
           <ScalarProperty Name="candidat" ColumnName="candidat" />
-          <ScalarProperty Name="bureau" ColumnName="bureau" />
-          <ScalarProperty Name="compte" ColumnName="compte" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

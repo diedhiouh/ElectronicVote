@@ -12,11 +12,9 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="prenom" Type="varchar" MaxLength="50" />
           <Property Name="nom" Type="varchar" MaxLength="50" />
-          <Property Name="cni" Type="varchar" MaxLength="50" />
+          <Property Name="cni" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="avoter" Type="tinyint" />
           <Property Name="candidat" Type="int" />
-          <Property Name="bureau" Type="int" />
-          <Property Name="compte" Type="int" />
         </EntityType>
         <EntityContainer Name="ElectionDatabaseModel3StoreContainer">
           <EntitySet Name="Electeur" EntityType="Self.Electeur" Schema="dbo" store:Type="Tables" />
@@ -33,11 +31,9 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cni" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cni" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="avoter" Type="Byte" />
           <Property Name="candidat" Type="Int32" />
-          <Property Name="bureau" Type="Int32" />
-          <Property Name="compte" Type="Int32" />
         </EntityType>
         <EntityContainer Name="ElectionDatabaseEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Electeur" EntityType="Self.Electeur" />
@@ -57,8 +53,6 @@
                 <ScalarProperty Name="cni" ColumnName="cni" />
                 <ScalarProperty Name="avoter" ColumnName="avoter" />
                 <ScalarProperty Name="candidat" ColumnName="candidat" />
-                <ScalarProperty Name="bureau" ColumnName="bureau" />
-                <ScalarProperty Name="compte" ColumnName="compte" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

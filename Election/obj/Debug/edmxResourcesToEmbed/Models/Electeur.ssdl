@@ -7,11 +7,9 @@
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="prenom" Type="varchar" MaxLength="50" />
     <Property Name="nom" Type="varchar" MaxLength="50" />
-    <Property Name="cni" Type="varchar" MaxLength="50" />
+    <Property Name="cni" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="avoter" Type="tinyint" />
     <Property Name="candidat" Type="int" />
-    <Property Name="bureau" Type="int" />
-    <Property Name="compte" Type="int" />
   </EntityType>
   <EntityContainer Name="ElectionDatabaseModel3StoreContainer">
     <EntitySet Name="Electeur" EntityType="Self.Electeur" Schema="dbo" store:Type="Tables" />
