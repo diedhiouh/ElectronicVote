@@ -29,9 +29,7 @@
                     <th>
                         @Html.DisplayNameFor(model => model.datenaiss)
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.photo)
-                    </th>
+                  
                     <th>
                         @Html.DisplayNameFor(model => model.voix)
                     </th>
@@ -54,15 +52,12 @@
                             @Html.DisplayFor(modelItem => item.datenaiss)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.photo)
-                        </td>
-                        <td>
                             @Html.DisplayFor(modelItem => item.voix)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Modifier", "Edit", new { id = item.Id }) |
                             @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            @Html.ActionLink("Supprimer", "Delete", new { id = item.Id })
                         </td>
                     </tr>
                 }

@@ -47,7 +47,7 @@ namespace Election.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "prenom,nom,parti,datenaiss,photo,voix")] Candidat candidat)
+        public ActionResult Create([Bind(Include = "prenom,nom,parti,datenaiss")] Candidat candidat)
         {
             if (ModelState.IsValid)
             {
